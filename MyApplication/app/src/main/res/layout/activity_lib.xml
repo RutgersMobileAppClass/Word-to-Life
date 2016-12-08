@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_lib"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mobileappclass.myapplication.Activity_lib">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar_lib"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
+
+
+    <TextView
+        android:id="@+id/title_LIB"
+        android:layout_below="@+id/my_toolbar_lib"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/Text2"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+         />
+
+    <GridView
+        android:id="@+id/gridview_LIB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="75dp"
+        android:numColumns="2"
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="8dp"
+        android:layout_below="@+id/title_LIB"
+        android:paddingBottom="16dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        />
+</RelativeLayout>
+
