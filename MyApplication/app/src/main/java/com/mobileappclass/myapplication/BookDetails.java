@@ -48,7 +48,10 @@ public class BookDetails extends AppCompatActivity {
 
     public void readphone(View view) {
 
-        Intent myIntent = new Intent(BookDetails.this, ReaderClass.class);
+        Intent myIntent = new Intent(BookDetails.this, Reader.class);
+
+
+
 
         BookDetails.this.startActivity(myIntent);
 

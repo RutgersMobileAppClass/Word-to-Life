@@ -46,6 +46,8 @@
         android:fillViewport="true"
         android:layout_marginRight="5sp"
         android:layout_marginLeft="5sp"
+        android:focusable="false"
+        android:onClick="recentTextClick"
         >
 
         <LinearLayout
@@ -57,6 +59,8 @@
             android:layout_marginRight="10sp"
             android:layout_marginTop="2sp"
             android:gravity="center|left"
+            android:focusable="false"
+            android:onClick="recentTextClick"
             >
 
 
@@ -146,6 +150,8 @@
         android:fillViewport="true"
         android:layout_marginRight="5sp"
         android:layout_marginLeft="5sp"
+        android:focusable="false"
+        android:onClick="libraryTextClick"
         >
 
         <LinearLayout
@@ -157,6 +163,8 @@
             android:layout_marginRight="10sp"
             android:layout_marginTop="2sp"
             android:gravity="center|left"
+            android:focusable="false"
+            android:onClick="libraryTextClick"
             >
 
         </LinearLayout>

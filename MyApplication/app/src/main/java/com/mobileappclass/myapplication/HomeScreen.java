@@ -3,6 +3,7 @@ package com.mobileappclass.myapplication;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Parcelable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,6 +49,7 @@ public class HomeScreen extends AppCompatActivity {
         addBooks();
 
         fillBookstoRecent();
+        fillBookstoLibrary();
         //addBooktoView(R.id.recentLinearLayout,R.drawable.image9780307474278);
 
         // Sets up the toolbar
@@ -109,6 +111,13 @@ public class HomeScreen extends AppCompatActivity {
         recent_Books.add(new Book(R.string.tgott, R.string.ph, R.drawable.image9781594633669));
         recent_Books.add(new Book(R.string.hpatcc, R.string.jkr, R.drawable.image9781338099133));
         recent_Books.add(new Book(R.string.ff, R.string.jkr, R.drawable.image9781338109061));
+
+        lib_Books.add(new Book(R.string.ddfc,R.string.cb,R.drawable.image123456));
+        lib_Books.add(new Book(R.string.tup, R.string.ml, R.drawable.image9780393254594));
+        lib_Books.add(new Book(R.string.tgott, R.string.ph, R.drawable.image9781594633669));
+        lib_Books.add(new Book(R.string.hpatcc, R.string.jkr, R.drawable.image9781338099133));
+        lib_Books.add(new Book(R.string.ff, R.string.jkr, R.drawable.image9781338109061));
+
     }
 
 
@@ -149,6 +158,26 @@ public class HomeScreen extends AppCompatActivity {
 
         for(int i = 0; i < size; ++i){
             addBooktoView(R.id.recentLinearLayout,recent_Books.get(i).getImageResource());
+        }
+
+    }
+
+    private void fillBookstoLibrary() {
+
+        int size = lib_Books.size();
+        if(lib_Books.size() <= 0){
+            //  Make a Nothing to show textbox
+        }
+
+        else if (lib_Books.size()> 5){
+            size = 5;
+        }
+        else {
+            size = lib_Books.size();
+        }
+
+        for(int i = 0; i < size; ++i){
+            addBooktoView(R.id.libraryLinearLayout,lib_Books.get(i).getImageResource());
         }
 
     }
@@ -200,14 +229,27 @@ public class HomeScreen extends AppCompatActivity {
 
 
         Intent myIntent = new Intent(HomeScreen.this, Activity_lib.class);
+        Bundle b1 = new Bundle();
+        b1.putParcelableArrayList("libraryBooks",(ArrayList<? extends Parcelable>) lib_Books);
 
+        myIntent.putExtras(b1);
 
         HomeScreen.this.startActivity(myIntent);
 
 
+    }
+    public void recentTextClick(View view) {
 
 
+        Intent myIntent1 = new Intent(HomeScreen.this, Activity_rec.class);
 
+        Bundle b1 = new Bundle();
+        b1.putParcelableArrayList("recentBooks",(ArrayList<? extends Parcelable>) recent_Books);
+
+        myIntent1.putExtras(b1);
+
+
+        HomeScreen.this.startActivity(myIntent1);
 
     }
 
@@ -219,4 +261,6 @@ public class HomeScreen extends AppCompatActivity {
 
 
     }
+
+
 }

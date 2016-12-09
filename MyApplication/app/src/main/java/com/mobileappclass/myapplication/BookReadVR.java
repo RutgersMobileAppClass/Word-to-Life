@@ -7,7 +7,7 @@ import android.view.WindowManager;
 
 public class BookReadVR extends AppCompatActivity {
 
-    
+
 
 
 
@@ -22,6 +22,7 @@ public class BookReadVR extends AppCompatActivity {
             setContentView(R.layout.activity_book_read_vr);
         }
 
+    /*
     private void fillBookstoRecent() {
 
         int size = recent_Books.size();
@@ -41,6 +42,7 @@ public class BookReadVR extends AppCompatActivity {
         }
 
     }
+    */
 
 
 }

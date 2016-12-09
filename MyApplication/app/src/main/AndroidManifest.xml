@@ -20,7 +20,9 @@
         <activity android:name=".Activity_lib" />
         <activity android:name=".BookDetails" />
         <activity android:name=".ReaderClass" />
-        <activity android:name=".BookReadVR"></activity>
+        <activity android:name=".BookReadVR" />
+        <activity android:name=".Activity_rec" />
+        <activity android:name=".Reader"></activity>
     </application>
 
 </manifest>

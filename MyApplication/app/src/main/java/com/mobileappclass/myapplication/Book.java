@@ -27,6 +27,10 @@ public class Book implements Parcelable{
         this.imageResource = imageResource;
     }
 
+    public Book(int imageResource){
+        this.imageResource = imageResource;
+    }
+
     public Book(){
 
     }

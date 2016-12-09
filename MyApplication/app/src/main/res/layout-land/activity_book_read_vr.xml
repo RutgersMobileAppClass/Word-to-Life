@@ -9,10 +9,15 @@
     android:layout_height="match_parent"
     android:background="@android:color/black">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="2"
+
+
+
         >
 
         <FrameLayout
@@ -48,4 +53,6 @@
         </FrameLayout>
 
     </LinearLayout>
+
+   
 </RelativeLayout>

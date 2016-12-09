@@ -20,32 +20,25 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Activity_lib extends AppCompatActivity {
+public class Activity_rec extends AppCompatActivity {
 
+    private ArrayList<Book> recent_books;
     private EditText newTaskText;
     private EditText newTaskDescription;
-
-    private ArrayList<Book> Books;
-    Book book_clicked;
-   // private Book[] books;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lib);
-       Books = new ArrayList<>();
-        book_clicked = new Book();
+        setContentView(R.layout.activity_rec);
 
-       // addBooks();
+        recent_books = new ArrayList<>();
+
+
 
         if(getIntent().getExtras() != null){
 
-
-            Books = getIntent().getParcelableArrayListExtra("libraryBooks");
+            recent_books = getIntent().getParcelableArrayListExtra("recentBooks");
         }
-
-
 
 
         // Sets up the toolbar
@@ -54,21 +47,21 @@ public class Activity_lib extends AppCompatActivity {
 
 
         GridView gridView=(GridView) findViewById(R.id.gridview_LIB);
-        BooksAdapter1 booksAdapter=new BooksAdapter1(this, Books);
+        BooksAdapter1 booksAdapter=new BooksAdapter1(this,recent_books);
         gridView.setAdapter(booksAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent myIntent1 = new Intent(Activity_lib.this, BookDetails.class);
+                Intent myIntent1 = new Intent(Activity_rec.this, BookDetails.class);
 
                 Bundle b1 = new Bundle();
-                b1.putParcelableArrayList("Books",(ArrayList<? extends Parcelable>) Books);
+                b1.putParcelableArrayList("Books",(ArrayList<? extends Parcelable>) recent_books);
                 b1.putInt("Position",position);
 
                 myIntent1.putExtras(b1);
-                Activity_lib.this.startActivity(myIntent1);
+                Activity_rec.this.startActivity(myIntent1);
 
 
             }
@@ -77,11 +70,8 @@ public class Activity_lib extends AppCompatActivity {
 
 
 
+
     }
-
-    // Hardcoded Books
-
-
 
 
     @Override
@@ -130,28 +120,6 @@ public class Activity_lib extends AppCompatActivity {
 
     }
 
-    /*
-    private void addBooks() {
-
-
-        Books.add(new Book(R.string.tup, R.string.ml, R.drawable.image9780393254594));
-        Books.add(new Book(R.string.tgott, R.string.ph, R.drawable.image9781594633669));
-        Books.add(new Book(R.string.hpatcc, R.string.jkr, R.drawable.image9781338099133));
-        Books.add(new Book(R.string.ff, R.string.jkr, R.drawable.image9781338109061));
-        //Books.add(new Book(R.string.hand_hand_fingers_thumb, R.string.dr_seuss, R.drawable.image9781338099133));
-        //Books.add(new Book(R.string.the_very_hungry_caterpillar, R.string.eric_carle, R.drawable.image9780393254594));
-       // Books.add(new Book(R.string.the_going_to_bed_book, R.string.sandra_boynton, R.drawable.image9781476738024));
-       // Books.add(new Book(R.string.oh_baby_go_baby, R.string.dr_seuss, R.drawable.image9781594633669));
-       // Books.add(new Book(R.string.the_tooth_book, R.string.dr_seuss, R.drawable.image9781338099133));
-        //Books.add(new Book(R.string.one_fish_two_fish_red_fish_blue_fish, R.string.dr_seuss, R.drawable.image9780393254594));
-
-
-    }
-    */
-
-
-
-
     // Search Button Clicked
     public void searchClick_lib(MenuItem item) {
 
@@ -171,7 +139,7 @@ public class Activity_lib extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 // TODO Actually search through Library
-                Toast.makeText(Activity_lib.this,"Search Clicked",Toast.LENGTH_LONG).show();
+                //Toast.makeText(Activity_lib.this,"Search Clicked",Toast.LENGTH_LONG).show();
 
 
             }
@@ -194,18 +162,10 @@ public class Activity_lib extends AppCompatActivity {
 
         // TODO open homescreen back
 
-        Intent myIntent = new Intent(Activity_lib.this, HomeScreen.class);
-
-        //MainActivity.this.startActivity(myIntent);
+        Intent myIntent = new Intent(Activity_rec.this, HomeScreen.class);
 
 
-        // Bundle b = new Bundle();
-        //b.putStringArrayList("Name_Array", nameArray);
-        //b.putStringArrayList("Number_Array", numberArray);
-        //b.putStringArrayList("Relation_Array",relationArray);
-        //  myIntent = new Intent(HomeScreen.this, Activity_lib.class);
-        //myIntent.putExtras(b); //Optional parameters
-        Activity_lib.this.startActivity(myIntent);
+        Activity_rec.this.startActivity(myIntent);
 
 
 
@@ -214,4 +174,11 @@ public class Activity_lib extends AppCompatActivity {
 
 
     }
+
+
+
+
+
+
+
 }
