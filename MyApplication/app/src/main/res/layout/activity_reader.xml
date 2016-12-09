@@ -30,7 +30,6 @@
 
 
 
-
             <ImageView
                 android:layout_height="1000dp"
                  android:layout_width="750dp"
@@ -41,6 +40,42 @@
                 android:layout_height="1000dp"
                 android:layout_width="750dp"
                 android:src="@drawable/page02"/>
+
+            <ImageView
+                android:layout_height="1000dp"
+                android:layout_width="750dp"
+                android:src="@drawable/page03"/>
+
+
+            <ImageView
+                android:layout_height="1000dp"
+                android:layout_width="750dp"
+                android:src="@drawable/page04"/>
+
+            <ImageView
+                android:layout_height="1000dp"
+                android:layout_width="750dp"
+                android:src="@drawable/page05"/>
+
+
+            <ImageView
+                android:layout_height="1000dp"
+                android:layout_width="750dp"
+                android:src="@drawable/page06"/>
+
+            <ImageView
+                android:layout_height="1000dp"
+                android:layout_width="750dp"
+                android:src="@drawable/page07"/>
+
+            <ImageView
+                android:layout_height="1000dp"
+                android:layout_width="750dp"
+                android:src="@drawable/page08"/>
+
+
+
+
 
 
 

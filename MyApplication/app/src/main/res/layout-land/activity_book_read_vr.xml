@@ -29,7 +29,7 @@
             android:id="@+id/LeftView">
 
             <ImageView
-                android:src="@drawable/page01"
+                android:src="@drawable/page03"
                 android:scaleType="fitCenter"
                 android:layout_marginBottom="60dp"
                 android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_height="match_parent"
             android:id="@+id/RightView">
             <ImageView
-                android:src="@drawable/page01"
+                android:src="@drawable/page03"
                 android:scaleType="fitCenter"
                 android:layout_marginBottom="60dp"
                 android:layout_width="match_parent"
@@ -54,5 +54,5 @@
 
     </LinearLayout>
 
-   
+
 </RelativeLayout>

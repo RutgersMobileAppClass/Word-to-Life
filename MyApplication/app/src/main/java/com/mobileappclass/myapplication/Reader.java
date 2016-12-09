@@ -21,12 +21,13 @@ public class Reader extends AppCompatActivity {
 
         book = new ArrayList<>();
 
-        addPages();
-       fillPagestoView();
+        //addPages();
+       //fillPagestoView();
 
 
 
     }
+
 
     private void addPages() {
         book.add(new Book(R.drawable.page01));
@@ -38,7 +39,7 @@ public class Reader extends AppCompatActivity {
         book.add(new Book(R.drawable.page07));
         book.add(new Book(R.drawable.page08));
         book.add(new Book(R.drawable.page09));
-        book.add(new Book(R.drawable.page09));
+        book.add(new Book(R.drawable.page10));
 
 
     }
@@ -82,6 +83,7 @@ public class Reader extends AppCompatActivity {
 
 
     }
+
 
 
 }
